@@ -81,10 +81,10 @@ export function ProjectsSection() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
               >
                 <TiltCard className="overflow-hidden rounded-3xl border border-border glow-on-hover">
-                  <div className="grid lg:grid-cols-2">
+                  <div className="grid lg:grid-cols-2 lg:items-start">
                     <div
                       className={cn(
-                        "relative flex min-h-[220px] items-center justify-center bg-gradient-to-br p-10",
+                        "relative flex aspect-[4/3] items-center justify-center self-start bg-gradient-to-br p-10 sm:aspect-[16/10]",
                         project.gradient
                       )}
                     >
@@ -134,6 +134,23 @@ export function ProjectsSection() {
                         })}
                       </div>
 
+                      {project.mobileImage && (
+                        <div className="mt-6">
+                          <span className="font-mono-label text-xs text-muted-foreground">
+                            Mobile app · iOS
+                          </span>
+                          <div className="relative mt-2 h-28 w-full overflow-hidden rounded-xl border border-border">
+                            <Image
+                              src={project.mobileImage}
+                              alt={`${project.title} mobile app screenshots`}
+                              fill
+                              sizes="(min-width: 1024px) 50vw, 100vw"
+                              className="object-cover object-left"
+                            />
+                          </div>
+                        </div>
+                      )}
+
                       <div className="mt-6 flex flex-wrap gap-3">
                         {project.live && (
                           <a
@@ -144,6 +161,17 @@ export function ProjectsSection() {
                           >
                             Live Demo
                             <ExternalLink size={15} />
+                          </a>
+                        )}
+                        {project.appStoreUrl && (
+                          <a
+                            href={project.appStoreUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-muted"
+                          >
+                            <Smartphone size={15} />
+                            App Store
                           </a>
                         )}
                         {project.github && (

@@ -15,6 +15,8 @@ interface Project {
   gradient: string;
   accentColor: string;
   image?: string;
+  appStoreUrl?: string;
+  mobileImage?: string;
 }
 
 export const portfolioConfig = {
@@ -133,6 +135,9 @@ export const portfolioConfig = {
       gradient: "from-blue-500/20 to-purple-500/20",
       accentColor: "#0071e3",
       image: "/mytaskowl-preview.png",
+      mobileImage: "/mytaskowl-mobile-preview.png",
+      appStoreUrl:
+        "https://apps.apple.com/ph/app/mytaskowl-mobile/id6762628862",
     },
   ] as Project[],
 
