@@ -47,7 +47,7 @@ export const portfolioConfig = {
     ],
     highlights: [
       { label: "Years of Experience", value: "2+" },
-      { label: "Projects Shipped", value: "10+" },
+      { label: "Projects Shipped", value: "1" },
       { label: "Platforms", value: "Web & Mobile" },
       { label: "Coffee per Day", value: "3☕" },
     ],
