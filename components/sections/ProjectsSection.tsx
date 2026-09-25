@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, Smartphone, Globe } from "lucide-react";
+import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Tag } from "@/components/ui/Tag";
 import { TiltCard } from "@/components/ui/TiltCard";
@@ -88,11 +89,15 @@ export function ProjectsSection() {
                       )}
                     >
                       {project.image ? (
-                        <img
-                          src={project.image}
-                          alt={`${project.title} preview`}
-                          className="h-full w-full rounded-xl object-cover"
-                        />
+                        <div className="relative h-full w-full overflow-hidden rounded-xl">
+                          <Image
+                            src={project.image}
+                            alt={`${project.title} preview`}
+                            fill
+                            sizes="(min-width: 1024px) 50vw, 100vw"
+                            className="object-cover"
+                          />
+                        </div>
                       ) : (
                         <span
                           className="font-display text-4xl font-bold tracking-tight"

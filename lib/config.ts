@@ -132,6 +132,7 @@ export const portfolioConfig = {
       featured: true,
       gradient: "from-blue-500/20 to-purple-500/20",
       accentColor: "#0071e3",
+      image: "/mytaskowl-preview.png",
     },
   ] as Project[],
 
