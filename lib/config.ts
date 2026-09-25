@@ -113,8 +113,8 @@ export const portfolioConfig = {
       role: "Front-end Developer",
       period: "Present",
       description:
-        "Working as a Front-end Developer, building and maintaining user-facing web interfaces.",
-      technologies: [] as string[],
+        "Working as a Front-end Developer, building and maintaining user-facing interfaces across web and native mobile apps for Android and iOS.",
+      technologies: ["Web", "Android", "iOS"] as string[],
     },
   ],
 
