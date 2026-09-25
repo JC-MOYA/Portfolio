@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, Smartphone, Globe } from "lucide-react";
+import { ExternalLink, Github, Smartphone, Globe, PlayCircle } from "lucide-react";
 import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Tag } from "@/components/ui/Tag";
@@ -155,6 +155,17 @@ export function ProjectsSection() {
                           >
                             <Smartphone size={15} />
                             App Store
+                          </a>
+                        )}
+                        {project.playStoreUrl && (
+                          <a
+                            href={project.playStoreUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-muted"
+                          >
+                            <PlayCircle size={15} />
+                            Google Play
                           </a>
                         )}
                         {project.github && (

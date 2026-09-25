@@ -16,6 +16,7 @@ interface Project {
   accentColor: string;
   image?: string;
   appStoreUrl?: string;
+  playStoreUrl?: string;
 }
 
 export const portfolioConfig = {
@@ -151,6 +152,8 @@ export const portfolioConfig = {
       image: "/mytaskowl-mobile-preview.png",
       appStoreUrl:
         "https://apps.apple.com/ph/app/mytaskowl-mobile/id6762628862",
+      playStoreUrl:
+        "https://play.google.com/store/apps/details?id=com.mytaskowl.mytaskowl",
     },
   ] as Project[],
 
