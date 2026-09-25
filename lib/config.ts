@@ -16,7 +16,6 @@ interface Project {
   accentColor: string;
   image?: string;
   appStoreUrl?: string;
-  mobileImage?: string;
 }
 
 export const portfolioConfig = {
@@ -124,18 +123,32 @@ export const portfolioConfig = {
     {
       title: "MyTaskOwl",
       description:
-        "A task management app available as a web app and native mobile apps for Android and iOS.",
+        "A task management web app for organizing and tracking day-to-day work, built end to end.",
       longDescription:
-        "MyTaskOwl helps people organize and track their day-to-day tasks, built as a responsive web app alongside native Android and iOS apps for task management on the go.",
-      tags: ["Web", "Android", "iOS"],
-      category: "Full-Stack",
+        "MyTaskOwl's web app helps people organize and track their day-to-day tasks — built responsive, from backend APIs to a polished front-end experience.",
+      tags: ["Web"],
+      category: "Web",
       github: "",
       live: "https://app.mytaskowl.com/",
       featured: true,
       gradient: "from-blue-500/20 to-purple-500/20",
       accentColor: "#0071e3",
       image: "/mytaskowl-preview.png",
-      mobileImage: "/mytaskowl-mobile-preview.png",
+    },
+    {
+      title: "MyTaskOwl Mobile",
+      description:
+        "The native mobile companion app for MyTaskOwl — task management, time tracking, and team collaboration on the go.",
+      longDescription:
+        "MyTaskOwl Mobile is the mobile extension of the MyTaskOwl platform, built natively for iOS (with an Android app too) with time tracking, project boards, and team collaboration features.",
+      tags: ["iOS", "Android"],
+      category: "Mobile",
+      github: "",
+      live: "",
+      featured: true,
+      gradient: "from-violet-500/20 to-indigo-500/20",
+      accentColor: "#8b5cf6",
+      image: "/mytaskowl-mobile-preview.png",
       appStoreUrl:
         "https://apps.apple.com/ph/app/mytaskowl-mobile/id6762628862",
     },

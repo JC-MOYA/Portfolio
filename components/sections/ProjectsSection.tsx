@@ -134,23 +134,6 @@ export function ProjectsSection() {
                         })}
                       </div>
 
-                      {project.mobileImage && (
-                        <div className="mt-6">
-                          <span className="font-mono-label text-xs text-muted-foreground">
-                            Mobile app · iOS
-                          </span>
-                          <div className="relative mt-2 h-28 w-full overflow-hidden rounded-xl border border-border">
-                            <Image
-                              src={project.mobileImage}
-                              alt={`${project.title} mobile app screenshots`}
-                              fill
-                              sizes="(min-width: 1024px) 50vw, 100vw"
-                              className="object-cover object-left"
-                            />
-                          </div>
-                        </div>
-                      )}
-
                       <div className="mt-6 flex flex-wrap gap-3">
                         {project.live && (
                           <a
