@@ -63,6 +63,7 @@ export const portfolioConfig = {
         { name: "TypeScript", level: 90 },
         { name: "Tailwind CSS", level: 88 },
         { name: "Framer Motion", level: 80 },
+        { name: "Angular", level: 80 },
         { name: "Vue.js", level: 70 },
       ],
     },
@@ -73,6 +74,8 @@ export const portfolioConfig = {
         { name: "PostgreSQL", level: 85 },
         { name: "Python / FastAPI", level: 78 },
         { name: "Redis", level: 72 },
+        { name: "PHP", level: 70 },
+        { name: "Laravel", level: 60 },
         { name: "GraphQL", level: 75 },
       ],
     },
@@ -83,6 +86,7 @@ export const portfolioConfig = {
         { name: "AWS / GCP", level: 75 },
         { name: "CI/CD (GitHub Actions)", level: 85 },
         { name: "Git", level: 95 },
+        { name: "Claude Code (AI-assisted dev)", level: 90 },
         { name: "Figma", level: 70 },
       ],
     },
@@ -105,6 +109,7 @@ export const portfolioConfig = {
     "Figma",
     "Vercel",
     "Linux",
+    "Claude Code",
   ],
 
   // ── Experience ─────────────────────────────────────────────
@@ -114,8 +119,8 @@ export const portfolioConfig = {
       role: "Front-end Developer",
       period: "Present",
       description:
-        "Working as a Front-end Developer, building and maintaining user-facing interfaces across web and native mobile apps for Android and iOS.",
-      technologies: ["Web", "Android", "iOS"] as string[],
+        "Working as a Front-end Developer, building and maintaining user-facing interfaces across web and native mobile apps for Android and iOS. Using AI-assisted tools like Claude Code to automate repetitive tasks, speed up development, and debug issues through prompt-driven workflows.",
+      technologies: ["Web", "Android", "iOS", "Claude Code"] as string[],
     },
   ],
 
