@@ -21,6 +21,7 @@ export const portfolioConfig = {
   // ── Personal Info ──────────────────────────────────────────
   name: "Jay Cobb Andrew Moya",
   title: "Full-Stack Web & Mobile Developer",
+  avatar: "/avatar.jpeg",
   tagline: "I build products that\nlive at the intersection of\ndesign and engineering.",
   shortBio:
     "Full-stack developer with 2 years of experience building web and mobile applications. Currently open to exciting opportunities.",

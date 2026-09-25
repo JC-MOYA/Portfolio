@@ -2,12 +2,27 @@
 
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Avatar } from "@/components/ui/Avatar";
 import { portfolioConfig } from "@/lib/config";
 
 export function AboutSection() {
   return (
     <section id="about" className="section-padding">
       <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="mb-6 flex justify-center"
+        >
+          <Avatar
+            src={portfolioConfig.avatar}
+            alt={portfolioConfig.name}
+            size={128}
+          />
+        </motion.div>
+
         <SectionHeading eyebrow="About" title="Getting to know me" />
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
