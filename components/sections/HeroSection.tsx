@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { portfolioConfig } from "@/lib/config";
-import { Avatar } from "@/components/ui/Avatar";
 
 function ParticleNetwork() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -123,20 +122,6 @@ export function HeroSection() {
       <ParticleNetwork />
 
       <div className="container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-6"
-        >
-          <Avatar
-            src={portfolioConfig.avatar}
-            alt={portfolioConfig.name}
-            size={88}
-            priority
-          />
-        </motion.div>
-
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
