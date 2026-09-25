@@ -164,13 +164,13 @@ export function ContactSection() {
             </button>
 
             {status === "success" && (
-              <p className="mt-4 flex items-center gap-2 text-sm text-emerald-600 dark:text-emerald-400">
+              <p className="mt-4 flex items-center gap-2 text-sm text-emerald-500">
                 <CheckCircle2 size={16} />
                 Thanks! Your message has been sent — I&apos;ll get back to you soon.
               </p>
             )}
             {status === "error" && (
-              <p className="mt-4 flex items-center gap-2 text-sm text-red-600 dark:text-red-400">
+              <p className="mt-4 flex items-center gap-2 text-sm text-red-500">
                 <AlertCircle size={16} />
                 {errorMessage}
               </p>

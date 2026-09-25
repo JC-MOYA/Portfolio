@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sf)", "system-ui", "-apple-system", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-sf)"],
         mono: ["var(--font-mono)", "monospace"],
       },
       colors: {
@@ -19,6 +20,7 @@ const config: Config = {
         "muted-foreground": "var(--muted-foreground)",
         border: "var(--border)",
         accent: "var(--accent)",
+        "accent-2": "var(--accent-2)",
         "accent-foreground": "var(--accent-foreground)",
         card: "var(--card)",
         "card-border": "var(--card-border)",
@@ -28,6 +30,7 @@ const config: Config = {
         "fade-in": "fadeIn 0.5s ease forwards",
         float: "float 6s ease-in-out infinite",
         shimmer: "shimmer 2s linear infinite",
+        "glow-pulse": "glowPulse 3s ease-in-out infinite",
       },
       keyframes: {
         fadeUp: {
@@ -45,6 +48,10 @@ const config: Config = {
         shimmer: {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
+        },
+        glowPulse: {
+          "0%, 100%": { opacity: "0.5" },
+          "50%": { opacity: "1" },
         },
       },
     },

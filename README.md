@@ -17,23 +17,31 @@ A clean, modern portfolio inspired by Apple's design language. Built with **Next
 ```
 portfolio/
 ├── app/
-│   ├── globals.css        # Design tokens & global styles
-│   ├── layout.tsx         # Root layout + metadata
-│   └── page.tsx           # Main page (assembles sections)
+│   ├── api/contact/route.ts  # Contact form endpoint (Resend + Upstash)
+│   ├── globals.css           # Design tokens & global styles
+│   ├── layout.tsx            # Root layout, fonts, metadata, JSON-LD
+│   ├── page.tsx               # Main page (assembles sections)
+│   ├── opengraph-image.tsx   # Dynamic OG image
+│   ├── icon.tsx               # Dynamic favicon
+│   ├── sitemap.ts / robots.ts # SEO
 ├── components/
 │   ├── layout/
 │   │   ├── Navbar.tsx     # Sticky nav with active section highlight
 │   │   └── Footer.tsx     # Footer with social links
 │   ├── sections/
-│   │   ├── HeroSection.tsx       # Landing hero with canvas animation
+│   │   ├── HeroSection.tsx       # Landing hero with canvas particle network
 │   │   ├── AboutSection.tsx      # About me + stats
 │   │   ├── ExperienceSection.tsx # Work history timeline
-│   │   ├── ProjectsSection.tsx   # Filterable project cards
+│   │   ├── ProjectsSection.tsx   # Featured + filterable project cards
 │   │   ├── SkillsSection.tsx     # Animated skill bars + tech cloud
-│   │   └── ContactSection.tsx    # Contact links + email CTA
+│   │   └── ContactSection.tsx    # Working contact form
 │   └── ui/
 │       ├── SectionHeading.tsx    # Reusable section header
-│       └── Tag.tsx               # Pill/badge component
+│       ├── Tag.tsx               # Pill/badge component
+│       ├── Avatar.tsx            # Profile photo w/ graceful fallback
+│       ├── TiltCard.tsx          # 3D tilt/glow hover wrapper
+│       ├── ScrollProgress.tsx    # Top scroll-progress bar
+│       └── ThemeToggle.tsx       # Dark/light toggle
 └── lib/
     ├── config.ts          # ⭐ ALL YOUR CONTENT GOES HERE
     └── utils.ts           # cn() utility
@@ -97,28 +105,30 @@ npm start
 
 ### Colors & Theme
 
-Edit `app/globals.css` to change the color palette:
+The site is dark-mode-first — `:root` holds the dark palette, and `:root.light` overrides it for light mode (toggled by `ThemeToggle`). Edit `app/globals.css` to change the palette:
 
 ```css
 :root {
-  --accent: #0071e3;   /* Primary blue — change this */
-  --background: #ffffff;
-  --foreground: #1d1d1f;
+  --accent: #22d3ee;    /* Primary cyan accent — change this */
+  --accent-2: #8b5cf6;  /* Secondary violet accent, used in gradients */
+  --background: #05070d;
+  --foreground: #e7e9f2;
 }
 
-.dark {
-  --accent: #2997ff;   /* Dark mode accent */
-  --background: #000000;
+:root.light {
+  --accent: #0284c7;
+  --background: #f7f8fb;
+  --foreground: #10131c;
 }
 ```
 
 ### Fonts
 
-The portfolio uses Apple's SF Pro Display via system font stack. To use a custom Google Font, update `app/layout.tsx` and add the import to `globals.css`.
+Self-hosted via `next/font/google` in `app/layout.tsx`: **Space Grotesk** for headings (`--font-display`), **Plus Jakarta Sans** for body text (`--font-body`), and **JetBrains Mono** for the terminal-style labels/badges (`--font-mono`). Swap any of them by changing the font import and variable name.
 
-### Adding a Dark Mode Toggle
+### Dark Mode Toggle
 
-The CSS variables are already set up for dark mode. Add a theme toggle component that toggles the `.dark` class on `<html>`.
+Already wired up — `components/ui/ThemeToggle.tsx` toggles a `.light` class on `<html>` (dark is the default, no class needed), and `app/layout.tsx` runs a blocking script before paint to avoid a flash of the wrong theme.
 
 ## 📦 Tech Stack
 

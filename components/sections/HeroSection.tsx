@@ -19,7 +19,7 @@ function ParticleNetwork() {
     let height = 0;
     let animationFrame: number;
 
-    const isDark = () => document.documentElement.classList.contains("dark");
+    const isDark = () => !document.documentElement.classList.contains("light");
 
     const particleCount = 60;
     type Particle = { x: number; y: number; vx: number; vy: number };
@@ -44,8 +44,8 @@ function ParticleNetwork() {
 
     const step = () => {
       ctx.clearRect(0, 0, width, height);
-      const dotColor = isDark() ? "rgba(245,245,247,0.5)" : "rgba(29,29,31,0.35)";
-      const lineColor = isDark() ? "rgba(245,245,247,0.08)" : "rgba(29,29,31,0.06)";
+      const dotColor = isDark() ? "rgba(34,211,238,0.55)" : "rgba(2,132,199,0.4)";
+      const lineColor = isDark() ? "rgba(139,92,246,0.16)" : "rgba(2,132,199,0.08)";
 
       particles.forEach((p) => {
         p.x += p.vx;
@@ -117,7 +117,7 @@ export function HeroSection() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-40 -right-20 h-[26rem] w-[26rem] rounded-full bg-[#5ac8fa]/20 blur-[110px]"
+        className="pointer-events-none absolute -bottom-40 -right-20 h-[26rem] w-[26rem] rounded-full bg-accent-2/20 blur-[110px]"
       />
 
       <ParticleNetwork />
@@ -133,6 +133,7 @@ export function HeroSection() {
             src={portfolioConfig.avatar}
             alt={portfolioConfig.name}
             size={88}
+            priority
           />
         </motion.div>
 
@@ -140,7 +141,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.05 }}
-          className="mb-4 text-sm font-medium text-accent"
+          className="prompt blink-cursor font-mono-label mb-4 text-sm font-medium text-accent"
         >
           {portfolioConfig.availability}
         </motion.p>
@@ -171,7 +172,7 @@ export function HeroSection() {
         >
           <a
             href="#projects"
-            className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
+            className="glow-on-hover rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
           >
             View my work
           </a>

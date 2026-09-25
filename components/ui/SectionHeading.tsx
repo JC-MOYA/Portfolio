@@ -21,7 +21,7 @@ export function SectionHeading({
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={align === "center" ? "text-center" : "text-left"}
     >
-      <span className="text-sm font-semibold uppercase tracking-wider text-accent">
+      <span className="prompt font-mono-label text-sm font-medium uppercase tracking-wider text-accent">
         {eyebrow}
       </span>
       <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
